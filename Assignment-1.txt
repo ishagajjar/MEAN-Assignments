@@ -1,0 +1,154 @@
+ASSIGNMENT 1: NODEJS
+
+1.
+
+var http = require('http');
+
+var server = http.createServer(function(req, res){
+  res.writeHead(200,{'Content-Type': 'text/plain'});
+  res.end("Success, I'm listening from port: 3000");
+});
+
+server.listen(3000, '127.0.0.1');
+console.log("Speaking");
+
+2.
+
+var fs = require('fs');
+
+var read = fs.readFileSync('text.txt', 'utf8');
+console.log(read);
+
+3.
+
+var fs = require('fs');
+var path = require('path');
+
+let directory = path.join(__dirname, "NewDir");
+fs.readdir(directory, function(err,files){
+  if(err) {
+    console.log('error',err);
+  }
+  files.forEach(function(file){
+    console.log(file);
+
+  });
+});
+console.log(files);
+
+4.
+
+var fs = require('fs');
+
+var read = "hey ho! Let's go";
+fs.writeFileSync('write.txt', read );
+
+5.
+
+var fs = require('fs');
+
+var readStream = fs.createReadStream(__dirname + '/text.txt', 'utf8');
+
+readStream.on('data',function(chunk){
+  console.log('new chunk received');
+  console.log(JSON.stringify(chunk));
+  var a = chunk.split(" ").length;
+  console.log(chunk.split("Good").length-1);
+});
+
+Text File:
+Hello Everyone!!!! My name is Isha. Good Morning. Good Evening Isha.
+Have a good day, Everyone!
+
+Output:
+new chunk received
+"Hello Everyone!!!! My name is Isha. Good Morning. Good Evening Isha.\r\nHave a good day, Everyone!\r\n"
+2
+
+6.
+
+Phase 1:
+
+app.js
+
+var calculator = require('./calculator');
+console.log(calculator.add(3,7));
+console.log(calculator.multiply(3,7));
+
+calculator.js
+
+var add = function(a,b){
+  return `The sum of ${a} & ${b} is ${a+b}`;
+};
+
+var multiply = function(a,b){
+  return `The multiplication of ${a} & ${b} is ${a+b}`;
+};
+
+module.exports.add = add;
+module.exports.multiply = multiply;
+
+Phase 2:
+var fs = require('fs');
+
+fs.mkdirSync('operations');
+fs.rmdirSync('operations');
+ 
+CREATED ALL FILES
+
+Phase 3:
+
+var calculator = require('./calculator');
+var strftime = require('strftime')
+console.log("Today is: " + strftime('%A, %B %d %Y, %H:%M:%S %P'));
+console.log(calculator.add(3,7));
+console.log(calculator.multiply(3,7));
+
+
+Output:
+Today is: Thursday, April 29 2021, 00:14:18 am
+The sum of 3 & 7 is 10
+The multiplication of 3 & 7 is 10
+
+7.
+
+var strftime = require('strftime')
+console.log(strftime('%H'));
+
+8.
+9.
+10.
+
+var fs = require('fs');
+
+var read = "hey ho! Let's go";
+fs.writeFile('writeMe.txt', read, function(err,data){
+  if(err) console.log('error',err);
+});
+
+Output:
+
+PS C:\Users\ishag\OneDrive\Desktop\npm> node app
+PS C:\Users\ishag\OneDrive\Desktop\npm> cat writeMe.txt
+hey ho! Let's go
+
+11.
+
+var fs = require('fs');
+
+var read = fs.readFileSync('text.txt', 'utf8');
+console.log(read);
+
+12.
+
+var strftime = require('strftime')
+console.log(strftime('%B %d %Y, %H:%M:%S %P'));
+
+13.
+
+var input = process.stdin;
+input.setEncoding('utf8');
+input.on('data', function(data){
+  console.log('Hello! ' + data);
+});
+

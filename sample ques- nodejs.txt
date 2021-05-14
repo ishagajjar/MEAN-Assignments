@@ -1,0 +1,142 @@
+NODEJS
+
+1. EVENT EMITTER EXAMPLE
+
+
+var events = require('events');
+
+var util = require('util');
+
+var Person = function(name){
+  this.name = name;
+};
+
+util.inherits(Person, events.EventEmitter);
+
+var james = new Person('james');
+var mary = new Person('mary');
+var ryu = new Person('ryu');
+
+var people = [james,mary,ryu];
+
+people.forEach(function(person){
+  person.on('speak', function(message){
+    console.log(person.name + ' said:' + message);
+  });
+});
+
+james.emit('speak', 'hey dude');
+
+2.
+
+var fs = require('fs');
+
+fs.mkdir('NewDir', function(){
+  fs.readFile('text.txt','utf8',function(err,data){
+    fs.writeFile('./NewDir/write.txt',data, function(err,data){
+      if(err) console.log('error',err);
+    });
+  });
+});
+
+3.
+
+// file program assignment
+
+
+var fs = require('fs');
+var path = require('path'),
+
+var f = fs.readFile('text.txt', function(err,data){
+  if(err) console.log('error', err);
+  var array = data.toString().split("\n");
+  for(i in array){
+    console.log(array[i]);
+  }
+});
+const lineReader = require('line-reader');
+lineReader.eachLine('text.txt', (line, last) => {
+});
+
+
+4.
+var fs = require('fs');
+
+var readStream = fs.createReadStream(__dirname + '/text.txt', 'utf8');
+
+readStream.on('data',function(chunk){
+  console.log('new chunk received');
+  console.log(chunk);
+})
+
+5.
+var fs = require('fs');
+
+var readStream = fs.createReadStream(__dirname + '/text.txt', 'utf8');
+var writeStream = fs.createWriteStream(__dirname + '/hello.txt');
+
+readStream.on('data',function(chunk){
+  console.log('new chunk received');
+  writeStream.write(chunk);
+});
+ 
+6.
+READ WRITE TO PORT
+
+var fs = require('fs');
+var http = require('http');
+
+var server = http.createServer(function(req, res){
+  res.writeHead(200,{'Content-Type': 'text/plain'});
+  var readStream = fs.createReadStream(__dirname + '/text.txt', 'utf8');
+  readStream.pipe(res);
+});
+
+server.listen(3000, '127.0.0.1');
+console.log("Speaking");
+
+
+7.
+
+HTML FILE
+
+var fs = require('fs');
+var http = require('http');
+
+var server = http.createServer(function(req, res){
+  res.writeHead(200,{'Content-Type': 'text/html'});
+  var readStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
+  readStream.pipe(res);
+});
+
+server.listen(3000, '127.0.0.1');
+console.log("Speaking");
+ 
+
+8.
+
+ROUTING:
+
+var fs = require('fs');
+var http = require('http');
+
+var server = http.createServer(function(req, res){
+  console.log('request was made: ' + req.url);
+  if(req.url === '/home' || req.url === '/'){
+    res.writeHead(200,{'Content-Type': 'text/html'});
+    fs.createReadStream(__dirname + '/index.html').pipe(res);
+  } else if (req.url === '/contact'){
+    res.writeHead(200,{'Content-Type': 'text/html'});
+    fs.createReadStream(__dirname + '/contact.html').pipe(res);
+  } else if (req.url === '/api/ninjas'){
+    var ninjas = [{name: "isha", age: 23}, {name:"yash", age: 18}];
+    res.writeHead(200,{'Content-Type': 'application/json'})
+    res.end(JSON.stringify(ninjas));
+  } else{
+    res.writeHead(404,{'Content-Type': 'text/html'})
+    fs.createReadStream(__dirname + '/404.html').pipe(res);
+  }
+});
+
+server.listen(3000, '127.0.0.1');
+console.log("Speaking");

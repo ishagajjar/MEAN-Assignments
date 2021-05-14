@@ -1,0 +1,206 @@
+FILES USED - app.js, public/assets folder which includes logo, styles.css, todo-app.js, controllers folder, views folder 
+
+APP.JS
+
+var express = require('express');
+var todoController = require('./controllers/todoController.js');
+
+
+var app = express();
+
+//set up template engines
+app.set('view engine','ejs');
+
+//static files
+app.use(express.static('./public'));
+
+//fire todoControllers
+todoController(app);
+
+//listen to port
+app.listen(3000);
+console.log('You are listening to port 3000');
+
+
+TODO.EJS
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script> <script src="/assets/todo-list.js"></script>
+    <link rel="stylesheet" href="/assets/styles.css" type="text/css">
+  </head>
+  <body>
+    <div id="todo-table">
+      <form>
+        <input type="text" name="item" placeholder="Add new item.." required>
+        <button type="submit">Add Item</button>
+      </form>
+      <ul>
+        <% for(var i=0; i < todos.length ; i++){ %>
+          <li><%= todos[i].item %></li>
+        <% } %>
+
+      </ul>
+    </div>
+
+  </body>
+</html>
+
+todoController.js
+
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+//connect to the database
+mongoose.connect('mongodb+srv://IshaGajjar:Eternity1998@ishacluster1.qlt2o.mongodb.net/todo?retryWrites=true&w=majority');
+
+//create schema - this is like a blueprint
+var todoSchema = new mongoose.Schema({
+  item: String
+});
+
+var Todo = mongoose.model('Todo', todoSchema);
+
+
+//var data = [{item:'get milk'},{item:'walk dog'},{item:'kick some coding ass'}];
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+module.exports = function(app){
+
+app.get('/todo', function(req,res){
+  //get data from mongodb and passit to the view
+  Todo.find({}, function(err,data){
+    if (err) throw err;
+    res.render('todo', {todos: data});
+  });
+
+});
+
+app.post('/todo', urlencodedParser , function(req, res){
+  //get data from view and add it to the mongodb
+  var newTodo = Todo(req.body).save(function(err,data){
+    if(err) throw err;
+    res.json(data);
+  });
+});
+
+
+app.delete('/todo/:item', function(req,res){
+  //delete requested item from mongodb
+  Todo.find({item: req.params.item.replace(/\-/g, " ")}).remove(function(err,data){
+    if(err) throw err;
+    res.json(data);
+  });
+});
+};
+
+todo-list.js
+
+$(document).ready(function(){
+
+  $('form').on('submit', function(){
+
+      var item = $('form input');
+      var todo = {item: item.val()};
+
+      $.ajax({
+        type: 'POST',
+        url: '/todo',
+        data: todo,
+        success: function(data){
+          //do something with the data via front-end framework
+          location.reload();
+        }
+      });
+
+      return false;
+
+  });
+
+  $('li').on('click', function(){
+      var item = $(this).text().replace(/ /g, "-");
+      $.ajax({
+        type: 'DELETE',
+        url: '/todo/' + item,
+        success: function(data){
+          //do something with the data via front-end framework
+          location.reload();
+        }
+      });
+  });
+
+});
+
+styles.css
+
+body{
+    background: #0d1521;
+    font-family: tahoma;
+    color: #989898;
+}
+
+#todo-table{
+    position: relative;
+    width: 95%;
+    background: #090d13;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#todo-table form:after{
+    margin: 0;
+    content: '';
+    display: block;
+    clear: both;
+}
+
+input[type="text"]{
+    width: 70%;
+    padding: 20px;
+    background:#181c22;
+    border: 0;
+    float: left;
+    font-size: 20px;
+    color: #989898;
+}
+
+button{
+    padding: 20px;
+    width: 30%;
+    float: left;
+    background: #23282e;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: arial;
+    font-size: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+li:hover{
+    text-decoration: line-through;
+    background: rgba(0,0,0,0.2);
+}
+
+h1{
+    background: url(/logo.png) no-repeat center;
+    margin-bottom: 0;
+    text-indent: -10000px;
+}
