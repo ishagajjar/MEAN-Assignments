@@ -1,0 +1,224 @@
+MongoDB: Aggregation Assignment
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> show dbs
+admin           0.000GB
+local           3.763GB
+mongo_practice  0.000GB
+population      0.002GB
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> use population
+switched to db population
+ATLANTA POPULATION
+1.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.find({$and: [{city:"ATLANTA"},{state:"GA"}]})
+{ "_id" : "30303", "city" : "ATLANTA", "loc" : [ -84.388846, 33.752504 ], "pop" : 1845, "state" : "GA" }
+{ "_id" : "30305", "city" : "ATLANTA", "loc" : [ -84.385145, 33.831963 ], "pop" : 19122, "state" : "GA" }
+{ "_id" : "30306", "city" : "ATLANTA", "loc" : [ -84.351418, 33.786027 ], "pop" : 20081, "state" : "GA" }
+{ "_id" : "30307", "city" : "ATLANTA", "loc" : [ -84.335957, 33.769138 ], "pop" : 16330, "state" : "GA" }
+{ "_id" : "30308", "city" : "ATLANTA", "loc" : [ -84.375744, 33.771839 ], "pop" : 8549, "state" : "GA" }
+{ "_id" : "30309", "city" : "ATLANTA", "loc" : [ -84.388338, 33.798407 ], "pop" : 14766, "state" : "GA" }
+{ "_id" : "30310", "city" : "ATLANTA", "loc" : [ -84.423173, 33.727849 ], "pop" : 34017, "state" : "GA" }
+{ "_id" : "30311", "city" : "ATLANTA", "loc" : [ -84.470219, 33.722957 ], "pop" : 34880, "state" : "GA" }
+{ "_id" : "30312", "city" : "ATLANTA", "loc" : [ -84.378125, 33.746749 ], "pop" : 17683, "state" : "GA" }
+{ "_id" : "30313", "city" : "ATLANTA", "loc" : [ -84.39352, 33.76825 ], "pop" : 8038, "state" : "GA" }
+{ "_id" : "30314", "city" : "ATLANTA", "loc" : [ -84.425546, 33.756103 ], "pop" : 26649, "state" : "GA" }
+{ "_id" : "30315", "city" : "ATLANTA", "loc" : [ -84.380771, 33.705062 ], "pop" : 41061, "state" : "GA" }
+{ "_id" : "30316", "city" : "ATLANTA", "loc" : [ -84.333913, 33.721686 ], "pop" : 34668, "state" : "GA" }
+{ "_id" : "30317", "city" : "ATLANTA", "loc" : [ -84.31685, 33.749788 ], "pop" : 16395, "state" : "GA" }
+{ "_id" : "30318", "city" : "ATLANTA", "loc" : [ -84.445432, 33.786454 ], "pop" : 53894, "state" : "GA" }
+{ "_id" : "30319", "city" : "ATLANTA", "loc" : [ -84.335091, 33.868728 ], "pop" : 32138, "state" : "GA" }
+{ "_id" : "30324", "city" : "ATLANTA", "loc" : [ -84.354867, 33.820609 ], "pop" : 15044, "state" : "GA" }
+{ "_id" : "30326", "city" : "ATLANTA", "loc" : [ -84.358232, 33.848168 ], "pop" : 125, "state" : "GA" }
+{ "_id" : "30327", "city" : "ATLANTA", "loc" : [ -84.419966, 33.862723 ], "pop" : 18467, "state" : "GA" }
+{ "_id" : "30329", "city" : "ATLANTA", "loc" : [ -84.321402, 33.823555 ], "pop" : 17013, "state" : "GA" }
+Type "it" for more
+2.
+ MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$match:{$and: [{city:"ATLANTA"},{state:"GA"}]}})
+{ "_id" : "30303", "city" : "ATLANTA", "loc" : [ -84.388846, 33.752504 ], "pop" : 1845, "state" : "GA" }
+{ "_id" : "30305", "city" : "ATLANTA", "loc" : [ -84.385145, 33.831963 ], "pop" : 19122, "state" : "GA" }
+{ "_id" : "30306", "city" : "ATLANTA", "loc" : [ -84.351418, 33.786027 ], "pop" : 20081, "state" : "GA" }
+{ "_id" : "30307", "city" : "ATLANTA", "loc" : [ -84.335957, 33.769138 ], "pop" : 16330, "state" : "GA" }
+{ "_id" : "30308", "city" : "ATLANTA", "loc" : [ -84.375744, 33.771839 ], "pop" : 8549, "state" : "GA" }
+{ "_id" : "30309", "city" : "ATLANTA", "loc" : [ -84.388338, 33.798407 ], "pop" : 14766, "state" : "GA" }
+{ "_id" : "30310", "city" : "ATLANTA", "loc" : [ -84.423173, 33.727849 ], "pop" : 34017, "state" : "GA" }
+{ "_id" : "30311", "city" : "ATLANTA", "loc" : [ -84.470219, 33.722957 ], "pop" : 34880, "state" : "GA" }
+{ "_id" : "30312", "city" : "ATLANTA", "loc" : [ -84.378125, 33.746749 ], "pop" : 17683, "state" : "GA" }
+{ "_id" : "30313", "city" : "ATLANTA", "loc" : [ -84.39352, 33.76825 ], "pop" : 8038, "state" : "GA" }
+{ "_id" : "30314", "city" : "ATLANTA", "loc" : [ -84.425546, 33.756103 ], "pop" : 26649, "state" : "GA" }
+{ "_id" : "30315", "city" : "ATLANTA", "loc" : [ -84.380771, 33.705062 ], "pop" : 41061, "state" : "GA" }
+{ "_id" : "30316", "city" : "ATLANTA", "loc" : [ -84.333913, 33.721686 ], "pop" : 34668, "state" : "GA" }
+{ "_id" : "30317", "city" : "ATLANTA", "loc" : [ -84.31685, 33.749788 ], "pop" : 16395, "state" : "GA" }
+{ "_id" : "30318", "city" : "ATLANTA", "loc" : [ -84.445432, 33.786454 ], "pop" : 53894, "state" : "GA" }
+{ "_id" : "30319", "city" : "ATLANTA", "loc" : [ -84.335091, 33.868728 ], "pop" : 32138, "state" : "GA" }
+{ "_id" : "30324", "city" : "ATLANTA", "loc" : [ -84.354867, 33.820609 ], "pop" : 15044, "state" : "GA" }
+{ "_id" : "30326", "city" : "ATLANTA", "loc" : [ -84.358232, 33.848168 ], "pop" : 125, "state" : "GA" }
+{ "_id" : "30327", "city" : "ATLANTA", "loc" : [ -84.419966, 33.862723 ], "pop" : 18467, "state" : "GA" }
+{ "_id" : "30329", "city" : "ATLANTA", "loc" : [ -84.321402, 33.823555 ], "pop" : 17013, "state" : "GA" }
+Type "it" for more
+3.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$match: {city:"ATLANTA"}},{$group:{_id:{loc:"$loc"}}})
+{ "_id" : { "loc" : [ -84.378125, 33.746749 ] } }
+{ "_id" : { "loc" : [ -84.354867, 33.820609 ] } }
+{ "_id" : { "loc" : [ -84.271645, 33.937772 ] } }
+{ "_id" : { "loc" : [ -84.376091, 33.884245 ] } }
+{ "_id" : { "loc" : [ -94.164617, 33.10898 ] } }
+{ "_id" : { "loc" : [ -84.341146, 33.979471 ] } }
+{ "_id" : { "loc" : [ -99.484354, 40.384901 ] } }
+{ "_id" : { "loc" : [ -84.388846, 33.752504 ] } }
+{ "_id" : { "loc" : [ -84.335091, 33.868728 ] } }
+{ "_id" : { "loc" : [ -84.481258, 33.605331 ] } }
+{ "_id" : { "loc" : [ -84.385145, 33.831963 ] } }
+{ "_id" : { "loc" : [ -84.388188, 33.74715 ] } }
+{ "_id" : { "loc" : [ -84.510028, 33.78534 ] } }
+{ "_id" : { "loc" : [ -89.230021, 40.258624 ] } }
+{ "_id" : { "loc" : [ -84.39352, 33.76825 ] } }
+{ "_id" : { "loc" : [ -84.31685, 33.749788 ] } }
+{ "_id" : { "loc" : [ -92.475019, 39.914639 ] } }
+{ "_id" : { "loc" : [ -84.445432, 33.786454 ] } }
+{ "_id" : { "loc" : [ -84.333913, 33.721686 ] } }
+{ "_id" : { "loc" : [ -84.425546, 33.756103 ] } }
+Type "it" for more
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$match: {city:"ATLANTA"}},{$group:{_id:{loc:"$loc"}}},{$count:"loc"})
+{ "loc" : 41 }
+4.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$match:{city:"ATLANTA"}},{$group:{_id:"$city",totalPop:{$sum:"$pop"}}})
+{ "_id" : "ATLANTA", "totalPop" : 630046 }
+
+POPULATIONS BY STATE
+1.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$group:{_id:"$state",totalPop:{$sum:"$pop"}}})
+{ "_id" : "TX", "totalPop" : 16984601 }
+{ "_id" : "PA", "totalPop" : 11881643 }
+{ "_id" : "WY", "totalPop" : 453528 }
+{ "_id" : "NH", "totalPop" : 1109252 }
+{ "_id" : "AR", "totalPop" : 2350725 }
+{ "_id" : "AZ", "totalPop" : 3665228 }
+{ "_id" : "FL", "totalPop" : 12686644 }
+{ "_id" : "ME", "totalPop" : 1226648 }
+{ "_id" : "IN", "totalPop" : 5544136 }
+{ "_id" : "NV", "totalPop" : 1201833 }
+{ "_id" : "NC", "totalPop" : 6628637 }
+{ "_id" : "OK", "totalPop" : 3145585 }
+{ "_id" : "MN", "totalPop" : 4372982 }
+{ "_id" : "CA", "totalPop" : 29754890 }
+{ "_id" : "VA", "totalPop" : 6181479 }
+{ "_id" : "SD", "totalPop" : 695397 }
+{ "_id" : "MS", "totalPop" : 2573216 }
+{ "_id" : "NE", "totalPop" : 1578139 }
+{ "_id" : "NM", "totalPop" : 1515069 }
+{ "_id" : "MT", "totalPop" : 798948 }
+Type "it" for more
+2.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$group:{_id:"$state",totalPop:{$sum:"$pop"}}},{$sort:{totalPop: -1}})
+{ "_id" : "CA", "totalPop" : 29754890 }
+{ "_id" : "NY", "totalPop" : 17990402 }
+{ "_id" : "TX", "totalPop" : 16984601 }
+{ "_id" : "FL", "totalPop" : 12686644 }
+{ "_id" : "PA", "totalPop" : 11881643 }
+{ "_id" : "IL", "totalPop" : 11427576 }
+{ "_id" : "OH", "totalPop" : 10846517 }
+{ "_id" : "MI", "totalPop" : 9295297 }
+{ "_id" : "NJ", "totalPop" : 7730188 }
+{ "_id" : "NC", "totalPop" : 6628637 }
+{ "_id" : "GA", "totalPop" : 6478216 }
+{ "_id" : "VA", "totalPop" : 6181479 }
+{ "_id" : "MA", "totalPop" : 6016425 }
+{ "_id" : "IN", "totalPop" : 5544136 }
+{ "_id" : "MO", "totalPop" : 5110648 }
+{ "_id" : "WI", "totalPop" : 4891769 }
+{ "_id" : "TN", "totalPop" : 4876457 }
+{ "_id" : "WA", "totalPop" : 4866692 }
+{ "_id" : "MD", "totalPop" : 4781379 }
+{ "_id" : "MN", "totalPop" : 4372982 }
+Type "it" for more
+3.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$group:{_id:"$state",totalPop:{$sum:"$pop"}}},{$sort:{totalPop: -1}},{$limit:3})
+{ "_id" : "CA", "totalPop" : 29754890 }
+{ "_id" : "NY", "totalPop" : 17990402 }
+{ "_id" : "TX", "totalPop" : 16984601 }
+
+POPULATIONS BY CITY:
+1.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$group:{_id:{city:"$city",state:"$state"},totalPop:{$sum:"$pop"}}})
+{ "_id" : { "city" : "KELLERTON", "state" : "IA" }, "totalPop" : 601 }
+{ "_id" : { "city" : "JACKSON CENTER", "state" : "OH" }, "totalPop" : 2318 }
+{ "_id" : { "city" : "HELENVILLE", "state" : "WI" }, "totalPop" : 1440 }
+{ "_id" : { "city" : "BRUNING", "state" : "NE" }, "totalPop" : 496 }
+{ "_id" : { "city" : "WATTS", "state" : "OK" }, "totalPop" : 2156 }
+{ "_id" : { "city" : "RIPTON", "state" : "VT" }, "totalPop" : 433 }
+{ "_id" : { "city" : "MONTFORD", "state" : "VA" }, "totalPop" : 8781 }
+{ "_id" : { "city" : "NOVA", "state" : "OH" }, "totalPop" : 1565 }
+{ "_id" : { "city" : "MICHIGAMME", "state" : "MI" }, "totalPop" : 1230 }
+{ "_id" : { "city" : "MONTICELLO", "state" : "MN" }, "totalPop" : 8919 }
+{ "_id" : { "city" : "CARMEN", "state" : "ID" }, "totalPop" : 195 }
+{ "_id" : { "city" : "VEGA", "state" : "TX" }, "totalPop" : 1738 }
+{ "_id" : { "city" : "RIBERA", "state" : "NM" }, "totalPop" : 1619 }
+{ "_id" : { "city" : "WHITE PLAINS", "state" : "KY" }, "totalPop" : 1877 }
+{ "_id" : { "city" : "DAHLGREN", "state" : "VA" }, "totalPop" : 1509 }
+{ "_id" : { "city" : "ACKERMAN", "state" : "MS" }, "totalPop" : 5027 }
+{ "_id" : { "city" : "MERIDIAN", "state" : "CA" }, "totalPop" : 907 }
+{ "_id" : { "city" : "BERKELEY", "state" : "CA" }, "totalPop" : 85760 }
+{ "_id" : { "city" : "SAVANNAH", "state" : "NY" }, "totalPop" : 2141 }
+{ "_id" : { "city" : "NORTHFIELD", "state" : "MN" }, "totalPop" : 17995 }
+Type "it" for more
+2.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$group:{_id:{city:"$city",state:"$state"},totalPop:{$sum:"$pop"}}},{$sort:{totalPop:-1}})
+{ "_id" : { "city" : "CHICAGO", "state" : "IL" }, "totalPop" : 2452177 }
+{ "_id" : { "city" : "BROOKLYN", "state" : "NY" }, "totalPop" : 2300504 }
+{ "_id" : { "city" : "LOS ANGELES", "state" : "CA" }, "totalPop" : 2102295 }
+{ "_id" : { "city" : "HOUSTON", "state" : "TX" }, "totalPop" : 2095918 }
+{ "_id" : { "city" : "PHILADELPHIA", "state" : "PA" }, "totalPop" : 1610956 }
+{ "_id" : { "city" : "NEW YORK", "state" : "NY" }, "totalPop" : 1476790 }
+{ "_id" : { "city" : "BRONX", "state" : "NY" }, "totalPop" : 1209548 }
+{ "_id" : { "city" : "SAN DIEGO", "state" : "CA" }, "totalPop" : 1049298 }
+{ "_id" : { "city" : "DETROIT", "state" : "MI" }, "totalPop" : 963243 }
+{ "_id" : { "city" : "DALLAS", "state" : "TX" }, "totalPop" : 940191 }
+{ "_id" : { "city" : "PHOENIX", "state" : "AZ" }, "totalPop" : 890853 }
+{ "_id" : { "city" : "MIAMI", "state" : "FL" }, "totalPop" : 825232 }
+{ "_id" : { "city" : "SAN JOSE", "state" : "CA" }, "totalPop" : 816653 }
+{ "_id" : { "city" : "SAN ANTONIO", "state" : "TX" }, "totalPop" : 811792 }
+{ "_id" : { "city" : "BALTIMORE", "state" : "MD" }, "totalPop" : 733081 }
+{ "_id" : { "city" : "SAN FRANCISCO", "state" : "CA" }, "totalPop" : 723993 }
+{ "_id" : { "city" : "MEMPHIS", "state" : "TN" }, "totalPop" : 632837 }
+{ "_id" : { "city" : "SACRAMENTO", "state" : "CA" }, "totalPop" : 628279 }
+{ "_id" : { "city" : "JACKSONVILLE", "state" : "FL" }, "totalPop" : 610160 }
+{ "_id" : { "city" : "ATLANTA", "state" : "GA" }, "totalPop" : 609591 }
+Type "it" for more
+3.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$group:{_id:{city:"$city",state:"$state"},totalPop:{$sum:"$pop"}}},{$sort:{totalPop:-1}},{$limit:3})
+{ "_id" : { "city" : "CHICAGO", "state" : "IL" }, "totalPop" : 2452177 }
+{ "_id" : { "city" : "BROOKLYN", "state" : "NY" }, "totalPop" : 2300504 }
+{ "_id" : { "city" : "LOS ANGELES", "state" : "CA" }, "totalPop" : 2102295 }
+4.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$match: {state:"TX"}},{$group:{_id:{city:"$city",state:"$state"},totalPop:{$sum:"$pop"}}},{$sort:{totalPop:-1}},{$limit:3})
+{ "_id" : { "city" : "HOUSTON", "state" : "TX" }, "totalPop" : 2095918 }
+{ "_id" : { "city" : "DALLAS", "state" : "TX" }, "totalPop" : 940191 }
+{ "_id" : { "city" : "SAN ANTONIO", "state" : "TX" }, "totalPop" : 811792 }
+
+BONUS:
+1.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$group:{_id:{city:"$city",state:"$state"},AVERAGEPop:{$avg:"$pop"}}})
+{ "_id" : { "city" : "ATLANTA", "state" : "IL" }, "AVERAGEPop" : 1978 }
+{ "_id" : { "city" : "CALDWELL", "state" : "WV" }, "AVERAGEPop" : 312 }
+{ "_id" : { "city" : "DEPEW", "state" : "OK" }, "AVERAGEPop" : 2224 }
+{ "_id" : { "city" : "LAKE LOTAWANA", "state" : "MO" }, "AVERAGEPop" : 30114 }
+{ "_id" : { "city" : "LEON", "state" : "OK" }, "AVERAGEPop" : 919 }
+{ "_id" : { "city" : "COCHECTON CENTER", "state" : "NY" }, "AVERAGEPop" : 131 }
+{ "_id" : { "city" : "CAVE SPRINGS", "state" : "AR" }, "AVERAGEPop" : 1629 }
+{ "_id" : { "city" : "ASHBURNHAM", "state" : "MA" }, "AVERAGEPop" : 5433 }
+{ "_id" : { "city" : "FARMLAND", "state" : "IN" }, "AVERAGEPop" : 1784 }
+{ "_id" : { "city" : "CALUMET", "state" : "IA" }, "AVERAGEPop" : 431 }
+{ "_id" : { "city" : "KARNES CITY", "state" : "TX" }, "AVERAGEPop" : 3827 }
+{ "_id" : { "city" : "BURLEY", "state" : "ID" }, "AVERAGEPop" : 12406 }
+{ "_id" : { "city" : "COLLINSTON", "state" : "UT" }, "AVERAGEPop" : 952 }
+{ "_id" : { "city" : "LAWRENCE", "state" : "MS" }, "AVERAGEPop" : 86 }
+{ "_id" : { "city" : "POINTBLANK", "state" : "TX" }, "AVERAGEPop" : 2911 }
+{ "_id" : { "city" : "ELDRED", "state" : "PA" }, "AVERAGEPop" : 2616 }
+{ "_id" : { "city" : "HATLEY", "state" : "WI" }, "AVERAGEPop" : 2129 }
+{ "_id" : { "city" : "BREMEN", "state" : "ND" }, "AVERAGEPop" : 108 }
+{ "_id" : { "city" : "BLOOMSDALE", "state" : "MO" }, "AVERAGEPop" : 3035 }
+{ "_id" : { "city" : "TETON", "state" : "ID" }, "AVERAGEPop" : 1086 }
+Type "it" for more
+2.
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.zipcodes.aggregate({$group:{_id:{city:"$city",state:"$state"},AVERAGEPop:{$avg:"$pop"}}},{$limit:3})
+{ "_id" : { "city" : "CHARLOTTE", "state" : "AR" }, "AVERAGEPop" : 797 }
+{ "_id" : { "city" : "WILEYVILLE", "state" : "WV" }, "AVERAGEPop" : 343 }
+{ "_id" : { "city" : "MOORES HILL", "state" : "IN" }, "AVERAGEPop" : 2729 }

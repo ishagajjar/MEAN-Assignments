@@ -1,0 +1,432 @@
+MongoDB Assignment 1:
+Part A- Movies Collection:
+Microsoft Windows [Version 10.0.19042.867]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\ishag>mongo "mongodb+srv://ishacluster1.qlt2o.mongodb.net/myFirstDatabase" --username IshaGajjar
+MongoDB shell version v4.4.5
+Enter password:
+connecting to: mongodb://ishacluster1-shard-00-00.qlt2o.mongodb.net:27017,ishacluster1-shard-00-01.qlt2o.mongodb.net:27017,ishacluster1-shard-00-02.qlt2o.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-b3p4l5-shard-0&ssl=true
+{"t":{"$date":"2021-04-14T08:21:49.043Z"},"s":"W",  "c":"NETWORK",  "id":23019,   "ctx":"ReplicaSetMonitor-TaskExecutor","msg":"DNS resolution while connecting to peer was slow","attr":{"peer":"ishacluster1-shard-00-01.qlt2o.mongodb.net:27017","durationMillis":1158}}
+{"t":{"$date":"2021-04-14T08:21:49.867Z"},"s":"W",  "c":"NETWORK",  "id":23019,   "ctx":"ReplicaSetMonitor-TaskExecutor","msg":"DNS resolution while connecting to peer was slow","attr":{"peer":"ishacluster1-shard-00-02.qlt2o.mongodb.net:27017","durationMillis":1981}}
+Implicit session: session { "id" : UUID("b515bdc7-e0c6-4d1f-b428-67cb554fb4c8") }
+MongoDB server version: 4.4.4
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> show dbs
+admin           0.000GB
+local           3.763GB
+mongo_practice  0.000GB
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> show collections
+movies
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert{title:"Fight Club",writer:"Chuck Palahniuko",year:"1999",actors:["Brad Pitt","Edward Norton"]}
+uncaught exception: SyntaxError: unexpected token: '{' :
+@(shell):1:16
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert({title:"Fight Club",writer:"Chuck Palahniuko",year:"1999",actors:["Brad Pitt","Edward Norton"]})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("6076aca153e39b3a4446c452"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : "1999", "actors" : [ "Brad Pitt", "Edward Norton" ] }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert({title:"Pulp Fiction",writer:"Quentin Tarantino",year:"1994",actors:["John Travolta","Uma Thurman"]})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert({title:"Inglorious Basterds",writer:"Quentin Tarantino",year:"2009",actors:["Brad Pitt","Diane Kruger","Eli Roth"]})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert({title:"The Hobbit: An Unexpected Journey",writer:"J.R.R. Tolkein",year:"2012",franchise:"The Hobbit"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert({title:"The Hobbit: The Desolation of Smaug",writer:"J.R.R. Tolkein",year:"2013",franchise:"The Hobbit"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert({title:"The Hobbit: The Battle of the Five Armies",writer:"J.R.R. Tolkein",year:"2012",franchise:"The Hobbit",synopsis:"Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert({title:"Pee Wee Herman's Big Adventure"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.insert({title:"Avatar"})
+WriteResult({ "nInserted" : 1 })
+Query/Find Documents
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("6076aca153e39b3a4446c452"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : "1999", "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("6076ae0253e39b3a4446c453"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : "1994", "actors" : [ "John Travolta", "Uma Thurman" ] }
+{ "_id" : ObjectId("6076ae8e53e39b3a4446c454"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : "2009", "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("6076af5c53e39b3a4446c456"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : "2013", "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("6076b04053e39b3a4446c457"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness" }
+{ "_id" : ObjectId("6076b0a553e39b3a4446c458"), "title" : "Pee Wee Herman's Big Adventure" }
+{ "_id" : ObjectId("6076b0b553e39b3a4446c459"), "title" : "Avatar" }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find().pretty()
+{
+        "_id" : ObjectId("6076aca153e39b3a4446c452"),
+        "title" : "Fight Club",
+        "writer" : "Chuck Palahniuko",
+        "year" : "1999",
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("6076ae0253e39b3a4446c453"),
+        "title" : "Pulp Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : "1994",
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("6076ae8e53e39b3a4446c454"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : "2009",
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("6076af1253e39b3a4446c455"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : "2012",
+        "franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("6076af5c53e39b3a4446c456"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : "2013",
+        "franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("6076b04053e39b3a4446c457"),
+        "title" : "The Hobbit: The Battle of the Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : "2012",
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness"
+}
+{
+        "_id" : ObjectId("6076b0a553e39b3a4446c458"),
+        "title" : "Pee Wee Herman's Big Adventure"
+}
+{ "_id" : ObjectId("6076b0b553e39b3a4446c459"), "title" : "Avatar" }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({writer:"Quentin Tarantino"})
+{ "_id" : ObjectId("6076ae0253e39b3a4446c453"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : "1994", "actors" : [ "John Travolta", "Uma Thurman" ] }
+{ "_id" : ObjectId("6076ae8e53e39b3a4446c454"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : "2009", "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({actors:"Brad Pitt"})
+{ "_id" : ObjectId("6076aca153e39b3a4446c452"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : "1999", "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("6076ae8e53e39b3a4446c454"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : "2009", "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({franchise:"The Hobbit"})
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("6076af5c53e39b3a4446c456"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : "2013", "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("6076b04053e39b3a4446c457"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness" }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({year:{$gt:1990,$lt:2000}})
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({year:{$gt:"1990",$lt:"2000"}})
+{ "_id" : ObjectId("6076aca153e39b3a4446c452"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : "1999", "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("6076ae0253e39b3a4446c453"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : "1994", "actors" : [ "John Travolta", "Uma Thurman" ] }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({$or:[{year:{$lt:"2000"}},{year:{$gt:"2010"}}]})
+{ "_id" : ObjectId("6076aca153e39b3a4446c452"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : "1999", "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("6076ae0253e39b3a4446c453"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : "1994", "actors" : [ "John Travolta", "Uma Thurman" ] }
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("6076af5c53e39b3a4446c456"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : "2013", "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("6076b04053e39b3a4446c457"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness" }
+Update Documents
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.update({title:"The Hobbit: An Unexpected Journey"}, {$set: {synopsis:"A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain, with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("6076aca153e39b3a4446c452"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : "1999", "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("6076ae0253e39b3a4446c453"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : "1994", "actors" : [ "John Travolta", "Uma Thurman" ] }
+{ "_id" : ObjectId("6076ae8e53e39b3a4446c454"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : "2009", "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "franchise" : "The Hobbit", "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.J.R. Tolkein", "year" : "2012", "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain, with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug." }
+{ "_id" : ObjectId("6076af5c53e39b3a4446c456"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : "2013", "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("6076b04053e39b3a4446c457"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness" }
+{ "_id" : ObjectId("6076b0a553e39b3a4446c458"), "title" : "Pee Wee Herman's Big Adventure" }
+{ "_id" : ObjectId("6076b0b553e39b3a4446c459"), "title" : "Avatar" }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.update({title:"The Hobbit: The Desolation of Smaug"}, {$set: {synopsis:"The dwarves, along with Bilbo Baggins and Gandalf teh Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.findOne({title:"The Hobbit: The Desolation of Smaug"})
+{
+        "_id" : ObjectId("6076af5c53e39b3a4446c456"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : "2013",
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf teh Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.update({title:"Pulp Fiction"}, {$push: {actors:"Samuel L. Jackson"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.findOne({title:"Pulp Fiction"})
+{
+        "_id" : ObjectId("6076ae0253e39b3a4446c453"),
+        "title" : "Pulp Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : "1994",
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman",
+                "Samuel L. Jackson"
+        ]
+}
+
+Text Search
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.createIndex({synopsis: "text"})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "commitQuorum" : "votingMembers",
+        "ok" : 1,
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1618400538, 155),
+                "signature" : {
+                        "hash" : BinData(0,"Wimyz8kRq5MiRYmDqicRanXqJp4="),
+                        "keyId" : NumberLong("6949908455373144066")
+                }
+        },
+        "operationTime" : Timestamp(1618400538, 155)
+}
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({$text: {$search: "Bilbo"}})
+{ "_id" : ObjectId("6076af5c53e39b3a4446c456"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : "2013", "franchise" : "The Hobbit", "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf teh Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring." }
+{ "_id" : ObjectId("6076b04053e39b3a4446c457"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness" }
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "franchise" : "The Hobbit", "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.J.R. Tolkein", "year" : "2012", "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain, with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug." }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({$text: {$search: "Gandalf"}})
+{ "_id" : ObjectId("6076af5c53e39b3a4446c456"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : "2013", "franchise" : "The Hobbit", "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf teh Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring." }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({$text: {$search: "Bilbo -Gandalf"}})
+{ "_id" : ObjectId("6076b04053e39b3a4446c457"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness" }
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "franchise" : "The Hobbit", "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.J.R. Tolkein", "year" : "2012", "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain, with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug." }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({$text: {$search: "dwarves hobbit"}})
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "franchise" : "The Hobbit", "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.J.R. Tolkein", "year" : "2012", "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain, with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug." }
+{ "_id" : ObjectId("6076af5c53e39b3a4446c456"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : "2013", "franchise" : "The Hobbit", "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf teh Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring." }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find({$text: {$search: "gold dragon"}})
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "franchise" : "The Hobbit", "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.J.R. Tolkein", "year" : "2012", "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain, with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug." }
+Delete Documents
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.remove({title:"Pee Wee Herman's Big Adventure"})
+WriteResult({ "nRemoved" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.remove({title:"Avatar"})
+WriteResult({ "nRemoved" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("6076aca153e39b3a4446c452"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : "1999", "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("6076ae0253e39b3a4446c453"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : "1994", "actors" : [ "John Travolta", "Uma Thurman", "Samuel L. Jackson" ] }
+{ "_id" : ObjectId("6076ae8e53e39b3a4446c454"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : "2009", "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+{ "_id" : ObjectId("6076af1253e39b3a4446c455"), "franchise" : "The Hobbit", "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.J.R. Tolkein", "year" : "2012", "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain, with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug." }
+{ "_id" : ObjectId("6076af5c53e39b3a4446c456"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : "2013", "franchise" : "The Hobbit", "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf teh Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring." }
+{ "_id" : ObjectId("6076b04053e39b3a4446c457"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : "2012", "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness" }
+
+Part B- Relationships:
+Users Collection:
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> show collections
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> show dbs
+admin           0.000GB
+local           3.763GB
+mongo_practice  0.000GB
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> show collections
+comments
+movies
+posts
+users
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.users.insert([{username:"GoodGuyGreg",first_name:"Good Guy",last_name:"Greg"},{username:"ScumbagSteve",full_name:{first:"Scumbag",last:"Steve"}}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 2,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.users.find()
+{ "_id" : ObjectId("6076e64e367356e7c22afcf4"), "username" : "GoodGuyGreg", "first_name" : "Good Guy", "last_name" : "Greg" }
+{ "_id" : ObjectId("6076e64e367356e7c22afcf5"), "username" : "ScumbagSteve", "full_name" : { "first" : "Scumbag", "last" : "Steve" } }
+Posts Collection:
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.insert({username:"GoodGuyGreg",title:"Passes out at party",body:"Wakey up early and cleans house"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.insert({username:"GoodGuyGreg",title:"Steals your identity",body:"Raises yor credit score"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.insert({username:"GoodGuyGreg",title:"Reports a bug in your code",body:"Sends you a Pull Request"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.insert({username:"ScumbagSteve",title:"Borrows something",body:"Sells it"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.insert({username:"ScumbagSteve",title:"Borrows everything",body:"The end"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.insert({username:"ScumbagSteve",title:"Forks your repo on github",body:"Sets to private"})
+WriteResult({ "nInserted" : 1 })
+
+
+Comments Collection:
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.find()
+{ "_id" : ObjectId("6076e893367356e7c22afcf6"), "username" : "GoodGuyGreg", "title" : "Passes out at party", "body" : "Wakes up early and cleans house" }
+{ "_id" : ObjectId("6076e9b4367356e7c22afcf7"), "username" : "GoodGuyGreg", "title" : "Steals your identity", "body" : "Raises yor credit score" }
+{ "_id" : ObjectId("6076ea14367356e7c22afcf8"), "username" : "GoodGuyGreg", "title" : "Reports a bug in your code", "body" : "Sends you a Pull Request" }
+{ "_id" : ObjectId("6076eafd367356e7c22afcfa"), "username" : "ScumbagSteve", "title" : "Borrows something", "body" : "Sells it" }
+{ "_id" : ObjectId("6076eb17367356e7c22afcfb"), "username" : "ScumbagSteve", "title" : "Borrows everything", "body" : "The end" }
+{ "_id" : ObjectId("6076eb37367356e7c22afcfc"), "username" : "ScumbagSteve", "title" : "Forks your repo on github", "body" : "Sets to private" }
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.comments.insert({username:"GoodGuyGreg",comment:"Hope you got a good deal!",post:ObjectId("6076eafd367356e7c22afcfa")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.comments.insert({username:"GoodGuyGreg",comment:"What's mine is yours!",post:ObjectId("6076eb17367356e7c22afcfb")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.comments.insert({username:"GoodGuyGreg",comment:"Don't violate the licensing agreement!",post:ObjectId("6076eb37367356e7c22afcfc")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.comments.insert({username:"ScumbagSteve",comment:"It still isn't clean",post:ObjectId("6076e893367356e7c22afcf6")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.comments.insert({username:"ScumbagSteve",comment:"Denied your PR cause I found a hack",post:ObjectId("6076ea14367356e7c22afcf8")})
+WriteResult({ "nInserted" : 1 })
+
+
+Relationship Queries:
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.users.find().pretty()
+{
+        "_id" : ObjectId("6076e64e367356e7c22afcf4"),
+        "username" : "GoodGuyGreg",
+        "first_name" : "Good Guy",
+        "last_name" : "Greg"
+}
+{
+        "_id" : ObjectId("6076e64e367356e7c22afcf5"),
+        "username" : "ScumbagSteve",
+        "full_name" : {
+                "first" : "Scumbag",
+                "last" : "Steve"
+        }
+}
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.find().pretty()
+{
+        "_id" : ObjectId("6076e893367356e7c22afcf6"),
+        "username" : "GoodGuyGreg",
+        "title" : "Passes out at party",
+        "body" : "Wakey up early and cleans house"
+}
+{
+        "_id" : ObjectId("6076e9b4367356e7c22afcf7"),
+        "username" : "GoodGuyGreg",
+        "title" : "Steals your identity",
+        "body" : "Raises yor credit score"
+}
+{
+        "_id" : ObjectId("6076ea14367356e7c22afcf8"),
+        "username" : "GoodGuyGreg",
+        "title" : "Reports a bug in your code",
+        "body" : "Sends you a Pull Request"
+}
+{
+        "_id" : ObjectId("6076eafd367356e7c22afcfa"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows something",
+        "body" : "Sells it"
+}
+{
+        "_id" : ObjectId("6076eb17367356e7c22afcfb"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows everything",
+        "body" : "The end"
+}
+{
+        "_id" : ObjectId("6076eb37367356e7c22afcfc"),
+        "username" : "ScumbagSteve",
+        "title" : "Forks your repo on github",
+        "body" : "Sets to private"
+}
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.find({username:"GoodGuyGreg"}).pretty()
+{
+        "_id" : ObjectId("6076e893367356e7c22afcf6"),
+        "username" : "GoodGuyGreg",
+        "title" : "Passes out at party",
+        "body" : "Wakey up early and cleans house"
+}
+{
+        "_id" : ObjectId("6076e9b4367356e7c22afcf7"),
+        "username" : "GoodGuyGreg",
+        "title" : "Steals your identity",
+        "body" : "Raises yor credit score"
+}
+{
+        "_id" : ObjectId("6076ea14367356e7c22afcf8"),
+        "username" : "GoodGuyGreg",
+        "title" : "Reports a bug in your code",
+        "body" : "Sends you a Pull Request"
+} 
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.posts.find({username:"ScumbagSteve"}).pretty()
+{
+        "_id" : ObjectId("6076eafd367356e7c22afcfa"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows something",
+        "body" : "Sells it"
+}
+{
+        "_id" : ObjectId("6076eb17367356e7c22afcfb"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows everything",
+        "body" : "The end"
+}
+{
+        "_id" : ObjectId("6076eb37367356e7c22afcfc"),
+        "username" : "ScumbagSteve",
+        "title" : "Forks your repo on github",
+        "body" : "Sets to private"
+}
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.comments.find().pretty()
+{
+        "_id" : ObjectId("6076f080367356e7c22afcfd"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Hope you got a good deal!",
+        "post" : ObjectId("6076eafd367356e7c22afcfa")
+}
+{
+        "_id" : ObjectId("6076f0f0367356e7c22afcfe"),
+        "username" : "GoodGuyGreg",
+        "comment" : "What's mine is yours!",
+        "post" : ObjectId("6076eb17367356e7c22afcfb")
+}
+{
+        "_id" : ObjectId("6076f14f367356e7c22afcff"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Don't violate the licensing agreement!",
+        "post" : ObjectId("6076eb37367356e7c22afcfc")
+}
+{
+        "_id" : ObjectId("6076f194367356e7c22afd00"),
+        "username" : "ScumbagSteve",
+        "comment" : "It still isn't clean",
+        "post" : ObjectId("6076e893367356e7c22afcf6")
+}
+{
+        "_id" : ObjectId("6076f1dd367356e7c22afd01"),
+        "username" : "ScumbagSteve",
+        "comment" : "Denied your PR cause I found a hack",
+        "post" : ObjectId("6076ea14367356e7c22afcf8")
+}
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.comments.find({username:"GoodGuyGreg"}).pretty()
+{
+        "_id" : ObjectId("6076f080367356e7c22afcfd"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Hope you got a good deal!",
+        "post" : ObjectId("6076eafd367356e7c22afcfa")
+}
+{
+        "_id" : ObjectId("6076f0f0367356e7c22afcfe"),
+        "username" : "GoodGuyGreg",
+        "comment" : "What's mine is yours!",
+        "post" : ObjectId("6076eb17367356e7c22afcfb")
+}
+{
+        "_id" : ObjectId("6076f14f367356e7c22afcff"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Don't violate the licensing agreement!",
+        "post" : ObjectId("6076eb37367356e7c22afcfc")
+}
+MongoDB Enterprise atlas-b3p4l5-shard-0:PRIMARY> db.comments.find({username:"ScumbagSteve"}).pretty()
+{
+        "_id" : ObjectId("6076f194367356e7c22afd00"),
+        "username" : "ScumbagSteve",
+        "comment" : "It still isn't clean",
+        "post" : ObjectId("6076e893367356e7c22afcf6")
+}
+{
+        "_id" : ObjectId("6076f1dd367356e7c22afd01"),
+        "username" : "ScumbagSteve",
+        "comment" : "Denied your PR cause I found a hack",
+        "post" : ObjectId("6076ea14367356e7c22afcf8")
+}
+
+
