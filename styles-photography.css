@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    display: block;
+}
+
+.image {
+    background-image: url(images/photography-img1.jpg);
+    background-size: cover;
+    color: white;
+    font-size: 30px;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.read  {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.work{
+    text-align: center;
+    padding: 20px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+.section1 {
+    background-color:lightgray;
+}
+.img2{
+    background-image: url(images/photography-img2.jpg);
+    min-height: 500px;
+    background-size: cover;
+}
+.img3{
+    background-image: url(images/photography-img3.jpg);
+    min-height: 500px;
+    background-size: cover;
+    width: 100%;
+    display: block;
+}
+.section2 {
+    background-color:lightgray;
+}
+
+.section3 {
+    background-color:lightgray;
+}
+.section4 {
+    background-color:darkgray;
+}
+.img4{
+    background-image: url(images/photography-img4.jpg);
+    min-height: 500px;
+    background-size: cover;
+    width: 100%;
+    display: block;
+}
+
+@media screen and (max-width: 500px){
+    .image, .img2, .img3, .img4{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

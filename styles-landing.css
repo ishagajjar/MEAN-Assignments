@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    color:black;
+}
+
+.backimage {
+    background-image: url(images/landing.png);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.backimage h1 {
+    font-size: 40px;
+    
+}
+.backimage .read {
+    font-size: 20px;
+    text-decoration: none;
+    columns: black;
+    border: black solid;
+    border-radius: 10px;
+    color: black;
+    padding: 10px 10px;
+}
+
+.sec1 {
+    padding: 20px;
+    background: darkgray;
+    color: black;
+    text-align: center;
+}
+
+.sec2 {
+    padding: 20px;
+    background: lightgray;
+    color: black;
+    text-align: center;
+}
+
+.sec3 {
+    display: flex;
+}
+
+.box1, .box3 {
+    background-color: darkgray;
+    padding: 20px;
+}
+.box2 {
+    padding: 20px;
+}
+

@@ -1,0 +1,61 @@
+body,html {
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+
+.img1, .img2, .img3 {
+    position: relative;
+    opacity: 0.8;
+    background-attachment: fixed;
+}
+
+.img1 {
+    background-image: url(images/parallax-img-1.jpg);
+    min-height: 100%;
+}
+
+.img2 {
+    background-image: url(images/parallax-img-2.jpg);
+    min-height: 500px;
+}
+
+.img3 {
+    background-image: url(images/parallax-img-3.jpg);
+    min-height: 100%;
+}
+
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+.section1 {
+    background-color:lightgray;
+}
+
+.section2 {
+    background-color: darkgrey;
+    color: floralwhite;
+}
+
+.section3 {
+    background-color: lightgray;
+}
+
+
+
+.border{
+    
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    padding: 20px 20px;
+    display: block;
+    color: white;
+ 
+}

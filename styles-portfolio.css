@@ -1,0 +1,71 @@
+@import 'flex-portfolio.css';
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header{
+    background-image: url(images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.9;
+    height: 500px;
+}
+.container{
+    max-width: 1152px;
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+header nav .leftside a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+nav{
+    padding: 20px;
+}
+
+.button1{
+    background-color:slateblue;
+    color:white;
+    font-size: 16px;
+    border: solid black;
+    border-radius: 10px;
+    padding: 0.3rem 0.3rem;
+    cursor: pointer;
+}
+.nametag{
+    color: white;
+    font-size: 40px;
+    padding: 70px;
+    text-align: center;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: block;
+}
+
+section{
+    background-color: lightgray;
+    padding: 4rem 4rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    display: block;
+       
+}
+section .photo{
+    padding: 100px;
+}
+.social{
+    background-color:darkgray;
+    color: white;
+    font-size: 10px;
+    padding: 50px;
+    text-align: center;
+    
+    display: block;  
+}

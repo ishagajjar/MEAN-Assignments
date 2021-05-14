@@ -1,0 +1,29 @@
+.center{
+    text-align: center;
+    color: black;
+}
+body{
+    background-color:lightgray;
+}
+.image{
+    text-align: center;
+    background-color:lightgray;
+    margin: auto;
+    display: block;
+   
+}
+section .caption{
+    display: inline-block;
+}
+.subheading{
+    text-align: center;
+    font-size: 20px;
+}
+ul{
+    display: inline-block;
+    margin: auto;
+}
+.footer{
+    text-align: center;
+    font-style: italic;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Survey</title>
+    <link rel="stylesheet" href="styles-form.css">
+</head>
+<header class="header">
+    <div>
+        <h1 class="title">Employee Satisfaction Survey</h1>
+    </div>
+    <div>
+        <p class="description">This survey is intended to give the management of the company, guidance to improve the workplace environment.</p>
+    </div>
+</header>
+<body class="body">
+    <section>
+        <main class="main">
+            <form id="survey form">
+                <div class="1">
+
+                    <label for="name">Name</label><br><br>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required style="width: 300px;height: 30px; background-color: lightgrey;"><br><br>
+                </div>
+                <div>
+                    <label for="email">Email</label><br><br>
+                    <input type="email" name="email" placeholder="Enter your email id" required style="width: 300px;height: 30px; background-color: lightgrey;"><br><br>
+                </div>
+                
+                <div>
+                    <label for="ques1"><strong>How would you describe your overall level of job satisfaction?</strong></label>
+                    <p>
+                      <input type="radio" name="ques1" value="vsat" checked>Very Satisfied<br><br>
+                      <input type="radio" name="ques1" value="ssat">Somewhat Satisfied<br><br>
+                      <input type="radio" name="ques1" value="neutral">Neutral<br><br>
+                      <input type="radio" name="ques1" value="sdis">Somewhat Dissatisfied<br><br>
+                      <input type="radio" name="ques1" value="dis">Dissatisfied<br><br>
+
+                    </p>
+                  </div>
+
+                  <div>
+                    <label for="ques1"><strong>Do You feel valued at work?</strong></label>
+                    <p>
+                      <input type="radio" name="ques2" value="yes" checked>Yes<br><br>
+                      <input type="radio" name="ques2" value="no">No<br><br>
+
+
+                    </p>
+                  </div>
+
+                  <div>
+                      <label for=""><strong>If no, please explain...</strong></label><br><br>
+                      <textarea name="" id="" placeholder="Type here..." cols="98" rows="10" style="background-color: lightgrey;"></textarea><br><br>
+                  </div>
+
+                  <div>
+                    <label for="ques1"><strong>Do you have the resources you need to perform your job well?</strong></label>
+                    <p>
+                      <input type="radio" name="ques2" value="yes" checked>Yes<br><br>
+                      <input type="radio" name="ques2" value="no">No<br><br>
+
+
+                    </p>
+                  </div>
+
+                  <div>
+                    <label for="ques1"><strong>Any Additional Feedback?</strong></label><br><br>
+                    <textarea name="" id="" placeholder="Type here..." cols="98" rows="10" style="background-color: lightgrey;"></textarea><br><br>
+
+                   
+                  </div>
+
+                  <div>
+
+                    <button type="submit" style="background-color: darkblue; width: 100px; height: 30px; color: white; align-items: center;">Submit</button>
+                  </div>
+
+                  
+            </form>
+        </main>
+    </section>
+
+</body>
+
+</html>
