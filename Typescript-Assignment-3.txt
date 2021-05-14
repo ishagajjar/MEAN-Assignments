@@ -1,0 +1,65 @@
+Assignment 3 : TypeScript Assignment:
+
+1.
+
+let su
+const promise1 = new Promise((resolve, reject) => {
+    let a = 10; 
+    if(a==10){
+        return a;
+    } else{
+        return "failed";
+    }
+});
+
+const promise2 = new Promise((resolve, reject) => {
+    let b = 40; 
+    if (b==40){
+        return b;
+    }else{
+        return "failed";
+    }
+});
+
+var sum = a+b;
+
+Promise.all([promise1 , promise2]).then(() => {
+    for (let i=0;i<)
+    console.log(sum);
+});
+
+2.
+
+class Account {
+    constructor(public id: string, public accName: string, public balance: number){
+    }
+}
+class SavingAccount extends Account {
+    constructor(public interest: number){
+        super(id,accName,balance);
+    }
+}
+class CurrentAccount extends Account {
+    constructor(public cash_credit: number){
+        super(id,accName,balance);
+    }
+}
+
+
+3.
+
+interface Printable{  
+    fname?:string;
+    lname?:string;
+    radius?:number
+}
+let circle: Printable = {
+    radius: 20
+}
+let employee: Printable = {
+    fname:"Isha",
+    lname:"Gajjar"
+}
+console.log(circle.radius);
+console.log(employee.fname + " " + employee.lname);
+

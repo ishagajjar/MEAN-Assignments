@@ -1,0 +1,162 @@
+ASSIGNMENT 1: ES6 Assignment:
+
+1.
+
+const Pi = 3.142;
+Pi = 3;
+Pi = Pi+12;
+
+Cannot assign to 'Pi' because it is a constant.ts(2588)
+
+2.
+
+var a=10;
+var b=20;
+if(a===10){
+    var a=30;
+    let b =50;
+    console.log(a);
+    console.log(b);
+}
+console.log(a);
+console.log(b);
+
+30
+50
+30
+20
+
+3.
+
+function Order(this: any) { 
+    this.id =  "100", 
+    this.title = "Food", 
+    this.price = 10000
+ }; 
+ let obj = new Order() 
+ console.log(obj.id);
+ console.log(obj.title);
+ console.log(obj.price);
+
+Order.prototype.getPrice = function(){
+    console.log(this.price);
+};
+Order.prototype.printOrder = function(){
+    console.log(this.id + " " + this.title + " " + this.price);
+};
+
+var obj1 = {id:"100",title:"Food",price: 10000};
+var copy = Object.assign({},obj1);
+console.log(copy);
+for(let i in copy){
+    console.log(copy[i]);
+}
+
+4.
+
+const names = ['Tom','Ivan','Jerry'];
+const arrToObj = names.map(name => ({name}));
+console.log(arrToObj);
+ 
+5.
+a.
+
+function add(a, b = 10) { 
+    return a+b; 
+} 
+console.log(add(43));
+
+b.
+
+function userFriends(userName, ...friends) {
+    console.log("User Name: " +userName);
+    console.log(message);
+
+    for(let i in friends){
+        console.log(friends[i]);
+    }
+
+}
+
+let message = "List of Friends";
+userFriends("Isha", "Sanika","Madhura","Samidhaa");
+userFriends("Yash","Pratham","Jeet","Rishi");
+
+c.
+
+function printCapitalNames(message, ...names){
+
+    console.log(message);
+
+    for(let i in names){
+        console.log(names[i].toUpperCase());
+    }
+
+}
+let message = "List of Names:"
+let names = ["Isha","Yash","Anita","Mitul","Ayush"];
+
+printCapitalNames(message, ...names);
+
+6.
+
+var username = "Isha";
+var laptopModel = "Lenovo";
+var deskNo = "ABCDE345"
+
+let ticket = `My name is ${username}. My new ${laptopModel} laptop is running slow. Kindly look into it. My desk number is ${deskNo}. Thank you.`;
+console.log(ticket);
+
+7.
+a.
+
+let employee = ["Isha", "Gajjar", "Female", "23"];
+let [firstName , lastName, gender, age] = employee;
+
+console.log(employee[2]);
+
+b.
+
+const organization = {
+    orgname: "Capgemini",
+    address: {
+        city: "Mumbai",
+        pinCode: "400604"
+    }
+};
+
+const {orgname, address: {city , pinCode}} = organization;
+console.log(`${pinCode}`);
+
+8.
+
+class Account {
+    constructor(id, name, balance){
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+    }
+
+}
+
+class SavingAccount extends Account {
+    constructor(id, name, balance,interest){
+        super(id,name,balance);
+        this.interest = interest;
+
+    }
+}
+
+class CurrentAccount extends Account {
+    constructor(id, name,balance,cash_credit){
+        super(id,name,balance);
+        this.cash_credit = cash_credit;
+
+    }
+}
+
+let acc1 = new SavingAccount("100","Isha","10000","100");
+console.log(SavingAccount.interest);
+
+let acc2 = new CurrentAccount("101","Gajjar","30000","2500");
+console.log(SavingAccount.interest);

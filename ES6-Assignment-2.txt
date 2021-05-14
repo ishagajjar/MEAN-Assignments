@@ -1,0 +1,132 @@
+ASSIGNMENT 2:
+
+1.
+
+let prev = Symbol.for("Previous number");
+let curr = Symbol.for("Current number");
+
+console.log(Symbol.keyFor(prev));
+class fibonacci {
+    constructor(previousNo,currentNo){
+        this[prev] = previousNo;
+        this[curr] = currentNo;
+    }
+    next(num){
+        fibonacci[prev] = 0;
+        fibonacci[curr] = 1;
+        var sum;
+        var i=0;
+        for (i = 0; i < num; i++) 
+        {
+            sum=fibonacci[prev]+fibonacci[curr];
+            fibonacci[prev]=fibonacci[curr];
+            fibonacci[curr]=sum;
+        }
+        return sum;
+        
+    }
+
+}
+
+var fibo = new fibonacci(0,1);
+fibo.next(10);
+
+2.
+
+let iterable = [121, 153, 670, 407, 1634];
+function createIterator(array){
+    let count = 0;
+    let sum = 0;
+    let temp;
+    let rem;
+    for(let i = 0;i<array.length;i++){
+        sum = 0;
+        temp = array[i];
+        while(array[i]!==0){
+            rem = array[i]%10;
+            sum = sum + rem*rem*rem;
+            array[i]=array[i]/10;
+        }
+    }
+    return{
+        next:function() {
+            if(sum === temp){
+                {done: false ;value: array[count++]};
+            }else{
+                {done: true ; value: undefined };
+            }       
+        }
+    }
+}
+
+let myIterator = createIterator(iterable);
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+
+
+3.
+
+let iterable = [121, 153, 670, 407, 1634];
+function *createGenerator(iterable){
+    let count = 0;
+    let sum = 0;
+    let temp;
+    let rem;
+    for(let i = 0;i<iterable.length;i++){
+        sum = 0;
+        temp = iterable[i];
+        while(iterable[i]!==0){
+            rem = iterable[i]%10;
+            sum = sum + rem*rem*rem;
+            iterable[i]=iterable[i]/10;
+            
+        }
+        yield sum;
+    }
+    return{
+        next:function() {
+            if(sum === temp){
+                {done: false ;value: iterable[count++]};
+            }else{
+                {done: true ; value: undefined };
+            }       
+        }
+    }
+    
+}
+
+let myGen = createGenerator(iterable);
+console.log(myGen.next());
+console.log(myGen.next());
+console.log(myGen.next());
+console.log(myGen.next());
+console.log(myGen.next());
+console.log(myGen.next());
+
+4.
+
+let myMap = new Map([
+    ["user1" , "Hello Everyone"],
+    ["user2", "Hi"],
+    ["user3","Good Morning"],
+    ["user4", "Hi Sarah"],
+    ["user5", "Welcome to our new chat room"],
+    ["user6", "Hi There"]
+]);
+
+console.log(myMap.size);
+for(let key of myMap.keys()){
+    console.log(key);
+}
+
+for(let value of myMap.values()){
+    console.log(value);
+}
+
+for(let entry of myMap.entries()){
+    console.log(`${entry[0]} -> ${entry[1]}`);
+}
