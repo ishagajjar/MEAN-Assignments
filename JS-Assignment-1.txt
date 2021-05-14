@@ -1,0 +1,1114 @@
+Asiignment 1:
+
+Exercises: Basic
+
+1.
+
+var num = prompt("Enter the number");
+if(num % 2 == 0){
+    document.write("The number is even");
+}else{
+    document.write("The number is odd");
+}
+
+2.
+
+var num1 = prompt("enter 1st number");
+var num2 = prompt("enter 2nd number");
+var num3 = prompt("enter 3rd number");
+var largest;
+if(num1>num2 && num1>num3){
+    largest = num1;
+}else if(num2>num1 && num2>num3){
+    largest = num2;
+}else{
+    largest = num3;
+}
+console.log("largest out of the three numbers is: " + largest);
+
+3.
+
+
+4.
+5.
+
+ var str;
+ var num,i;
+ 
+function repeat(str, num){
+    var temp = str;
+    for(i=0;i<num-1;i++){
+        str= str+temp; 
+    }
+    console.log(str);
+
+}
+6.
+7.
+
+<!DOCTYPE html>
+<html>
+<head><title>Hello World</title>
+</head>
+<body>
+    <script>
+        alert("Have a GOOD day!:")
+    </script>
+
+</body>
+</html>
+
+Exercises: Basic JS - Part 1
+
+1.
+
+var fourNums = [];
+for(i=0;i<4;i++){
+    fourNums.push=Math.random();
+    console.log(fourNums);
+}
+
+ 
+2.
+
+var fourNums = [];
+for(i=0;i<100;i++){
+    fourNums.push=Math.random();
+    console.log(fourNums);
+}
+
+ 
+3.
+
+var nums=[];
+var strings = ["1.2","2.3","3.4"];
+var nums = strings.map(Number);
+console.log(nums);
+ 
+4.
+5.
+
+Exercises: Basic JS - Part 2
+
+1. Done
+
+2.
+
+var x = 5;
+undefined
+x
+5
+
+3. 
+
+function half(x) {
+    return(x/2)
+}
+undefined
+half(x)
+2.5
+half(4)
+2
+half(3)
+1.5
+
+4.
+
+x
+5
+x is still 5.
+
+5.
+
+function seven(){
+    x=7;
+    return(x);
+}
+undefined
+seven()
+7
+x
+7
+
+6.
+
+function calculation(a,b,c){
+    return((a+b)/c);
+}
+undefined
+calculation(2,3,4)
+1.25
+calculation(1,1,0)
+Infinity
+calculation(-1,-1,0)
+-Infinity
+calculation(1,-1,0)
+NaN
+
+7.
+
+<!DOCTYPE html>
+<html>
+<head><title>Assignment</title>
+    <h1>My assignment</h1>
+</head>
+<body>
+   
+    <script src="test.js">
+    </script>
+
+</body>
+</html>
+
+Script:
+
+function calculation(a,b,c){
+    return((a+b)/c);
+}
+
+function age(a){
+    if(a>18){
+        console.log("you are an adult");
+    }
+}
+
+Output:
+
+calculation(2,3,4)
+1.25
+age(20)
+test.js:7 you are an adult
+
+8.
+
+function isEven(num){
+    if(num%2==0){
+        return true;
+    }else{
+        return false;
+    }
+}
+undefined
+isEven(100)
+true
+isEven(39)
+false
+
+Exercises: Basic JS - Part 2 - Extra
+
+1.
+
+document.write("Hello World");
+undefined
+
+2.
+
+var yourName = prompt("Enter your name");
+document.write("Hello " + yourName)
+
+3.
+
+var yourName = prompt("Enter your name");
+if(yourName=="Alice" || yourName=="Bob"){
+    document.write("Hello " + yourName)
+}
+
+4.
+
+var i=1, sum=0;
+var n = parseInt(prompt("Enter a number n"));
+for(i=1;i<=n;i++){
+    sum = sum + i;
+}
+console.log("sum is : "+ sum);
+
+5.
+
+var i=1, sum=0, prod=1;
+var n = parseInt(prompt("Enter a number n"));
+for(i=1;i<=n;i++){
+    if(i%3==0 || i%5==0){
+        console.log(i);
+        sum = sum + i;
+    }    
+}
+console.log("sum is : "+ sum); 
+
+
+
+
+6.
+
+var i=1, sum=0, prod=1;
+var n = parseInt(prompt("Enter a number n"));
+var choice = prompt("Enter choice a for sum and b for product");
+if(choice==="a"){
+    for(i=1;i<=n;i++){
+        sum = sum + i;
+    }
+    console.log("sum is : "+ sum);
+} 
+else {
+    if(choice==="b"){
+        for(i=1;i<=n;i++){
+            prod = prod*i;
+        }
+    }
+    console.log("prod is : "+ prod);
+}
+
+7.
+
+var i;
+var num = parseInt(prompt("Enter the number"));
+for (i=1;i<=10;i++){
+    console.log(num + "*" + i + "=" + num*i);
+}
+
+8.
+
+var i, prime;
+var num = parseInt(prompt("Enter the number"));
+for(i=2;i<num;i++){
+    if(num%i==0){
+        prime=false;
+        break;
+    }else{
+        prime = true;
+    }
+}
+if(prime==true){
+    console.log(num + " is a prime number")
+
+}else{
+    console.log(num + " it is not a prime number")
+
+}
+
+9.
+
+var num= Math.floor(Math.random()*10)+1;
+var count = 0;
+while(guess!=num){
+    var guess = parseInt(prompt('Guess the number'));
+    count++;
+}
+if(guess>num){
+    console.log("Too big");
+}else if(guess<num){
+    console.log("too small")
+}else {
+    console.log("Perfect")
+}
+console.log("count "+ count);
+
+10.
+
+var year = parseInt(prompt("enter the start year"));
+var count = 20;
+function leapyear(year,count){
+    while(count>=0){
+        if(year%4===0 && year%100!==0 || year%400===0){
+            console.log(year+ " is a leap year");
+            year++;
+            count--;
+
+        }else{
+            year++;
+        }
+    }
+}
+
+11.
+
+var max = Math.max(3, 67,56,34,89,2,78)
+
+12.
+
+var str = "Capgemini";
+var str1 = "";
+var i;
+for(i=str.length-1; i>=0;i--){
+    str1 += str[i];
+}
+console.log("new string " + str1);
+
+13.
+
+var element = parseInt(prompt("enter element"));
+var myArray = [1,2,3,4,5,6,7,8,9];
+var i;
+var result = true;
+function check(element){
+    for(i=0; i<myArray.length;i++){
+        if(myArray[i]===element){
+            console.log("Present");
+            break;
+        }else{
+            console.log("Absent");
+        }    
+    }    
+
+}
+
+14.
+
+var myArray = [1,2,3,4,5,6,7,8,9];
+var i;
+function result (){
+
+    for(i=1; i<myArray.length;i=i+2){
+        console.log(myArray[i]);
+
+        
+    }    
+}  
+
+15.
+
+var myArray = [1,2,3,4,5,6,7,8,9];
+var i, sum=0;
+function result (){
+
+    for(i=0; i<myArray.length;i++){
+        sum = sum+myArray[i];
+        console.log("total: "+ sum)
+
+        
+    }    
+}  
+
+16.
+
+var string = "malayalam";
+for(i=0;i<string.length/2;i++){
+    if(string[i]===string[string.length-i-1]){
+        console.log("it is a palindrome");
+    }else{
+        console.log("it is not a pallindrome");
+    }
+}
+
+17.
+
+var element = parseInt(prompt("enter element"));
+var myArray = [1,2,3,4,5,6,7,8,9];
+var i, sum=0;
+function result (){
+
+    for(i=0; i<myArray.length;i++){
+        sum = sum+myArray[i];
+       
+
+        
+    }
+    console.log("total: "+ sum)    
+}   
+
+18.
+
+var i; result=0;
+function on_all(){
+    for(i=1; i<=20;i++){
+        result = i*i;
+        console.log(result);
+
+    }
+}
+
+19.
+
+var a = ["a","b","c"];
+var b = [1,2,3];
+var c = a.concat(b);
+console.log(c);
+
+20.
+
+var a = ["a","b","c"];
+var b = [1,2,3];
+function alternate(){
+    let arr = [];
+    var i=0,j=0,k=0;
+    for(i=0;i<a.length+b.length;i++) {
+        if(i%2==0) {
+          arr[i]=a[j++];
+        } else {
+          arr[i]=b[k++];
+        }
+        
+
+    } 
+    return arr;
+  
+}
+
+21.
+
+var a = [1,4,6];
+var b = [2,3,5];
+var c = a.concat(b);
+console.log(c.sort());
+
+22.
+
+var a = [1,2,3,4,5,6];
+var num=2;
+var i,j,first;
+
+for(i=0;i<num;i++){
+    
+    first = a[0];
+    for(j=0;j<a.length-1;j++){
+        a[j]=a[j+1];
+    }
+    a[j]=first;       
+}
+for(i=0;i<a.length;i++){
+    console.log(a[i]);
+
+}
+
+23.
+
+var num1=0, num2=1;
+for(i=1;i<=100;i++){
+    console.log(num1);
+    num3=num1+num2;
+    num1=num2;
+    num2=num3;
+}
+
+24.
+
+var num = "123456789";
+var result = "";
+var gap_size = 1; //Desired distance between spaces
+
+while (num.length > 0) // Loop through string
+{
+    result = result + "," + num.substring(0,gap_size); // Insert space character
+    num = num.substring(gap_size);  // Trim String
+}
+console.log(result);
+
+25.
+
+
+function selectionSort(arr){
+    let smallestIndex = 0;
+    let currentIndex = 1;
+    let beginningIndex = 0;
+    while(beginningIndex < arr.length){
+        while(currentIndex < arr.length){
+            if(arr[smallestIndex] > arr[currentIndex]){
+                smallestIndex = currentIndex;
+            }
+            currentIndex++;
+
+        }
+        if(smallestIndex !== beginningIndex){
+            swap(arr, smallestIndex, beginningIndex)
+        }
+        beginningIndex++;
+        currentIndex = beginningIndex + 1;
+        smallestIndex = beginningIndex;
+    }
+    return arr;
+}
+
+26.
+
+function insertionSort(arr){
+    let beginningIndex = 0;
+    let currentIndex = 1;
+    while(currentIndex < arr.length){
+        while(currentIndex > 0){
+            currentVal = arr[currentIndex];
+            if(currentVal <= arr[currentIndex - 1]){
+                swap(arr, currentIndex, currentIndex - 1);
+                currentIndex--;
+            } else{
+                break;
+            }
+        
+        }
+        beginningIndex++;
+        currentIndex = beginningIndex + 1;
+
+    }
+
+    return arr;
+}
+
+27.
+
+function mSort (array) {
+    if (array.length === 1) {
+    return array                            // return once we hit an array with a single item
+ }
+ const middle = Math.floor(array.length / 2) // get the middle item of the array rounded down
+ const left = array.slice(0, middle)         // items on the left side
+ const right = array.slice(middle)           // items on the right side
+ console.log(middle);
+ return merge(
+    mSort(left),
+    mSort(right)
+ )
+ }
+ // compare the arrays item by item and return the concatenated result
+ function merge (left, right) {
+    let result = []
+    let leftIndex = 0
+    let rightIndex = 0
+    while (leftIndex < left.length && rightIndex < right.length) {
+       if (left[leftIndex] < right[rightIndex]) {
+       result.push(left[leftIndex])
+       leftIndex++
+       console.log("</br>");        
+       } else {
+       result.push(right[rightIndex])
+       rightIndex++      
+    }
+ }
+ return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
+ }
+ const list = [6,8,4,3,5,6,2,1,0,9,6];
+ console.log(mSort(list));
+
+28.
+
+function quick_Sorting(array) {
+    if (array.length <= 1) {
+        return array; 
+    } else {
+        var left = [];
+        var right = [];
+        var outputArray = [];
+        var pivot = array.pop();
+        var length = array.length;
+        for (var i = 0; i < length; i++) {
+            if (array[i] <= pivot) {
+                left.push(array[i]);
+            } else {
+                 right.push(array[i]);
+            }
+        }
+    return outputArray.concat(quick_Sorting(left), pivot, quick_Sorting(right));
+}
+}
+var myList = [3, 10, 2, 5, -5, 4, 7, 1];
+console.log("Input Array List: " + myList);
+var sortedList = quick_Sorting(myList);
+console.log("Output Array List: " + sortedList);
+
+29.
+
+let iterativeFunction = function (arr, x) {
+   
+    let start=0, end=arr.length-1;
+          
+    while (start<=end){
+        let mid=Math.floor((start + end)/2);
+   
+        if (arr[mid]===x) return true;
+        else if (arr[mid] < x) 
+             start = mid + 1;
+        else
+             end = mid - 1;
+    }
+   
+    return false;
+}
+   
+let arr = [1, 3, 5, 7, 8, 9];
+let x = 5;
+   
+if (iterativeFunction(arr, x, 0, arr.length-1))
+    console.log("Element found!<br>");
+else console.log("Element not found!<br>");
+   
+x = 5;
+   
+if (iterativeFunction(arr, x, 0, arr.length-1)){
+    console.log("Element found!<br>");
+}
+else console.log("Element not found!<br>");
+
+JAVASCRIPT ASSIGNMENTS
+
+1. 
+HTML:
+
+<!DOCTYPE html>
+<html>
+<head><title>Assignment</title>
+</head>
+<body>
+    <p>
+        <label for="fahrenheit">Temperature in Fahrenheit</label><br><br>
+        <input type="number", id="fahrenheit"><br><br>
+    </p>
+    <button onclick = "fahrenheitToCelsius()">Show Results</button>
+    <p>Celsius: <span id="output"></span></p>
+   
+    <script src="test.js">
+    </script>
+
+</body>
+</html>
+
+JS:
+
+function fahrenheitToCelsius(){
+    var fahrenheit =document.getElementById("fahrenheit").value;
+    var celsius;
+    if(fahrenheit!==0){
+        celsius=(fahrenheit-32)/1.8;
+        document.getElementById("output").innerHTML = celsius;
+    }else{
+        document.getElementById("output")="Invalid";
+    }
+
+}
+
+2.
+
+var num1 = parseInt(prompt("Enter the Number"));
+if(num1>=1 &&num1<=30){
+    for(j=0;j<num1;j++){
+        document.write("*"); 
+         
+    }
+    document.write("<br/>")          
+}
+var num2 = parseInt(prompt("Enter the Number"));
+if(num2>=1 &&num2<=30){
+    for(k=0;k<num2;k++){
+        document.write("*"); 
+         
+    }  
+    document.write("<br/>")        
+}
+var num3 = parseInt(prompt("Enter the Number"));
+if(num3>=1 &&num3<=30){
+    for(l=0;l<num3;l++){
+        document.write("*"); 
+         
+    }  
+    document.write("<br/>")        
+}
+
+3.
+
+HTML:
+
+<!DOCTYPE html>
+<html>
+<head><title>Assignment</title>
+</head>
+<body>
+    <table>
+        <label for="rows">Rows</label><br><br>
+        <input type="number", id="rows"><br><br>
+        <label for="columns">Columns</label><br><br>
+        <input type="number", id="columns"><br><br>
+    <table>
+    <p>
+        <button onclick = "Table()">Create Table</button>
+    </p>
+    <script src="test3.js">
+    </script>
+
+</body>
+</html>
+
+JS:
+
+function Table() {
+    var a, b, cell, rowElement, colElement;
+
+    a = document.getElementById("rows").value;
+    b = document.getElementById("columns").value;
+
+    if (a == "" || b == "") {
+        alert("Invalid");
+    } else {
+        cell = document.createElement('table');
+
+        for (var i = 0; i < a; i++) {
+            rowElement = document.createElement('tr');
+
+            for (var j = 0; j < b; j++) {
+                colElement = document.createElement('td');
+                colElement.appendChild(document.createTextNode(j + 1));
+                rowElement.appendChild(colElement);
+            }
+
+            cell.appendChild(rowElement);
+        }
+
+        document.body.appendChild(cell);
+    }
+}
+
+4.
+
+HTML:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Calculator</title>
+
+</head>
+
+<body>
+    <script src="MyCalculator.js"></script>
+    <p>
+        <button id="bt" onclick="MyCalc()">Run Calculator</button><br><br>
+    </p>
+    <p>
+        <label for="resultcalc">Result</label><br><br>
+        <input type="text" id="resultcalc" ><br><br>
+    </p>
+    
+    
+
+</body>
+</html>
+
+JS:
+
+var choice = parseInt(prompt("Choose option 1 to 7 for +,-,*,/,exponent,mean,quit"));
+var num1 = parseInt(prompt("Enter the 1st number"));
+var num2 = parseInt(prompt("Enter the 2nd number"));
+
+var result=0;
+function MyCalc(){
+
+
+    if(choice<1 && choice>7){
+        "Invalid Choice"
+    }else if(choice === 1){
+        result = num1+num2;
+        document.getElementById("resultcalc").innerHTML = result;
+    }else if(choice === 2){
+        result = num1-num2; 
+    }else if(choice === 3){
+        result = num1*num2;
+    }else if(choice === 4){
+        result=num1/num2;
+    }else{
+        result = Math.pow(num1,num2);
+    }
+
+}
+
+Extra:
+
+1.
+
+const morseCode = {
+    "A": ".-",
+    "B": "-...",
+    "C": "-.-.",
+    "D": "-..",
+    "E": ".",
+    "F": "..-.",
+    "G": "--.",
+    "H": "....",
+    "I": "..",
+    "J": ".---",
+    "K": "-.-",
+    "L": ".-..",
+    "M": "--",
+    "N": "-.",
+    "O": "---",
+    "P": ".--.",
+    "Q": "--.-",
+    "R": ".-.",
+    "S": "...",
+    "T": "-",
+    "U": "..-",
+    "W": ".--",
+    "X": "-..-",
+    "Y": "-.--",
+    "Z": "--.."
+ }
+ const convertToMorse = (str) => {
+    return str.toUpperCase().split("").map(el => {
+       return morseCode[el] ? morseCode[el] : el;
+    }).join("");
+ };
+ console.log(convertToMorse('Isha Gajjar'));
+ console.log(convertToMorse('Capgemini'));
+
+7.
+
+function is_Palindrome(str1) {
+    var rev = str1.split("").reverse().join("");
+    return str1 == rev;
+    }
+    
+    function longest_palindrome(str1){
+    
+    var max_length = 0,
+    maxp = '';
+    
+    for(var i=0; i < str1.length; i++) {
+        var subs = str1.substr(i, str1.length);
+    
+        for(var j=subs.length; j>=0; j--)   {
+            var sub_subs_str = subs.substr(0, j);
+            if (sub_subs_str.length <= 1)
+            continue;
+    
+            if (is_Palindrome(sub_subs_str))    {
+                if (sub_subs_str.length > max_length) {
+                    max_length = sub_subs_str.length;
+                    maxp = sub_subs_str;
+                }
+            }
+        }
+    }
+    
+    return maxp;
+}
+console.log(longest_palindrome("eccentric"));
+    
+console.log(longest_palindrome("isnjefwmalayalamefwcbwufb")); 
+
+8.
+
+Done
+
+9.
+10.
+11.
+12.
+
+class BinaryHeap {
+  constructor() {
+    this.values = [];
+  }
+  add(element) {
+    this.values.push(element);
+    let index = this.values.length - 1;
+    const current = this.values[index];
+
+    while (index > 0) {
+      let parentIndex = Math.floor((index - 1) / 2);
+      let parent = this.values[parentIndex];
+
+      if (parent <= current) {
+        this.values[parentIndex] = current;
+        this.values[index] = parent;
+        index = parentIndex;
+      } else break;
+    }
+  }
+}
+
+const tree = new BinaryHeap();
+tree.add(38);
+tree.add(42);
+tree.add(13);
+tree.add(5);
+console.log(tree); 
+
+Output:
+BinaryHeap { values: [ 42, 38, 13, 5 ] }
+
+13.
+
+class Node {
+    constructor(val) {
+      this.val = val;
+      this.right = null;
+      this.left = null;
+      this.count = 0;
+    };
+  };
+  
+  class BST {
+    constructor() {
+      this.root = null;
+    }
+    create(val) {
+      const newNode = new Node(val);
+      if (!this.root) {
+        this.root = newNode;
+        return this;
+      };
+      let current = this.root;
+  
+      const addSide = side => {
+        if (!current[side]) {
+          current[side] = newNode;
+          return this;
+        };
+        current = current[side];
+      };
+  
+      while (true) {
+        if (val === current.val) {
+          current.count++;
+          return this;
+        };
+        if (val < current.val) addSide('left');
+        else addSide('right');
+      };
+    };
+  };
+  
+  const tree = new BST();
+  tree.add(10);
+  tree.add(4);
+  tree.add(4);
+  tree.add(12);
+  tree.add(2);
+  console.log(tree);
+
+14.
+
+class Node {
+    constructor(val) {
+      this.val = val;
+      this.right = null;
+      this.left = null;
+      this.count = 0;
+    };
+  };
+  
+  class BST {
+    constructor() {
+      this.root = null;
+    }
+    create(val) {
+      const newNode = new Node(val);
+      if (!this.root) {
+        this.root = newNode;
+        return this;
+      };
+      let current = this.root;
+  
+      const addSide = side => {
+        if (!current[side]) {
+          current[side] = newNode;
+          return this;
+        };
+        current = current[side];
+      };
+  
+      while (true) {
+        if (val === current.val) {
+          current.count++;
+          return this;
+        };
+        if (val < current.val) addSide('left');
+        else addSide('right');
+      };
+    };
+  };
+  
+  const tree = new BST();
+  tree.add(10);
+  tree.add(4);
+  tree.add(4);
+  tree.add(12);
+  tree.add(2);
+  console.log(tree);
+
+
+16.
+
+const findFirstSequence = (s1, s2) => {
+    let subsequence = ""
+  
+    let s1Idx = 0
+    let s2Idx = 0
+  
+    for (; s1Idx < s1.length; ++s1Idx) {
+      const s1Char = s1[s1Idx]
+      for (let j = s2Idx; j < s2.length; ++j, ++s2Idx) {
+        const s2Char = s2[j]
+        if (s1Char === s2Char) {
+          subsequence += s1Char
+            ++s2Idx
+          break
+        }
+      }
+    }
+    return subsequence
+  }
+  
+  const removeDistinctChars = (s1, s2) => s1.split("").filter(c => s2.includes(c)).join("")
+  const removeDuplicates = (arr) => Array.from(new Set(arr))
+  
+  const findAllSubsequences = (s1, s2) => {
+    const s1NoDistinct = removeDistinctChars(s1, s2)
+    const s2NoDistinct = removeDistinctChars(s2, s1)
+  
+    let i = 0
+  
+    const sequences = []
+  
+    while (i < s1NoDistinct.length) {
+      const sequence = findFirstSequence(s1NoDistinct.slice(i), s2NoDistinct)
+      i += sequence.length
+      sequences.push(sequence)
+    }
+  
+    return sequences
+  }
+  
+  const findLongestSubsequence = (s1, s2) => {
+    const a = findAllSubsequences(s1, s2)
+    const b = findAllSubsequences(s2, s1)
+  
+    console.log('candidates:', [...a, ...b])
+  
+    return removeDuplicates([...a, ...b].sort((s1, s2) => s2.length - s1.length).filter((el, idx, arr) => el.length ===
+      arr[0].length))
+  }
+  
+  const test = (s1, s2) => console.log(findLongestSubsequence(s1, s2))
+  
+  test("ABAZDC", "BACBAD")
+  test("AGGTAB", "GXTXAYB")
+  test("ALSKJDHJASLDH", "HNGFLKSHRADSKLASDJ")
+  test("aaaa", "aa")
+
+19.
+
+function multiplyMatrices(m1, m2) {
+    var result = [];
+    for (var i = 0; i < m1.length; i++) {
+        result[i] = [];
+        for (var j = 0; j < m2[0].length; j++) {
+            var sum = 0;
+            for (var k = 0; k < m1[0].length; k++) {
+                sum += m1[i][k] * m2[k][j];
+            }
+            result[i][j] = sum;
+        }
+    }
+    return result;
+}
+
+var m1 = [[1,2],[3,4]]
+var m2 = [[5,6],[7,8]]
+
+var Result = multiplyMatrices(m1, m2)
+
+
+console.table(Result) 
+
+
+
+
+
+
+
+

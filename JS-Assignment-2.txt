@@ -1,0 +1,111 @@
+ASSIGNMENT 2: Functional Programming:
+
+Basic Exercises:
+
+1.
+
+var n = parseInt(prompt("Enter the number"));
+function composedValue(){
+    function square(){
+        function double(){
+            result = 2*n;
+            return result;
+        }
+        double(n);   
+        return result*result;
+    
+    }
+    return square();
+    
+     
+
+}
+
+2. 
+
+var n = parseInt(prompt("Enter the number"));
+function composedValue1(){
+    function square(){
+        function double(){
+            result = 2*n;
+            return result;
+        }
+        double(n);   
+        return result*result;
+    
+    }
+    return square();
+
+}
+function composedValue2(){
+    function double(){
+        function square(){
+            result = n*n;
+            return result;
+        }
+        square(n);   
+        return 2*result;
+    
+    }
+    return double();
+
+}
+
+3.
+
+function isEven(num){
+    return(num%2==0);
+} 
+console.log([1,3,5,4,2].find(isEven));
+
+4.
+
+var arr = [];
+function map1(arr){
+    answer = [];
+    for (i=0;i<arr.length;i++){
+        answer.push(arr[i]*arr[i]);
+    }
+    return answer;
+} 
+function map2(arr){
+    answer = [];
+    for (i=0;i<arr.length;i++){
+        answer.push(Math.sqrt(arr[i]));
+    }
+    return answer;
+} 
+
+
+Advanced Exercises:
+
+1.
+
+function isEven(num){
+    return(num%2==0);
+} 
+console.log([1,3,5,4,2].find(isEven));
+
+2.
+
+var arr=[1,2,3,4,5];
+var answer = [];
+for(i=0;i<arr.length+4;i++){
+    var a = arr.splice(0,1);
+    var A = a*a;
+    answer.push(A);
+}
+
+3.
+
+function double(x){
+    return 2*x;
+}
+console.log(double);
+
+
+
+
+
+
+
