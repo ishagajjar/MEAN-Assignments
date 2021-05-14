@@ -1,0 +1,250 @@
+HTML ASSIGNMENT
+
+1.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+
+<body style="background: yellow;">
+    <h1 style="background: red;">This is a heading</h1>
+    <p style="background: green;">This is a paragraph</p>
+    
+</body>
+</html>
+
+2.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+
+<body>
+    <p>Create a link of an image: <a href="https://www.google.co.in"><img src="smiley.png" width="30" height="30" style="border-style: solid;border-color: black;"></a></p>
+    <p>No border around the image, but still a link: <a href="https://www.google.co.in"><img src="smiley.png" width="30" height="30"></a></p>
+
+</body>
+</html>
+
+3.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+<body>
+    <table><strong>One column</strong>
+        <tr>
+            <td style="border-style: ridge;">100 </td>
+        </tr>
+    </table>
+    <table><strong>One row and three column</strong>
+    
+        <tr>
+            <td style="border-style: ridge;">100 </td>
+            <td style="border-style: ridge;">200 </td>
+            <td style="border-style: ridge;">300 </td>
+        </tr>
+    
+
+    </table>
+    <table><strong>Two rows and three columns</strong>
+        <colgroup>
+            <col span="3" style="border-style: ridge;">
+        
+        </colgroup>
+        <tr>
+            <td style="border-style: ridge;">100</td>
+            <td style="border-style: ridge;">200</td>
+            <td style="border-style: ridge;">300</td>
+        </tr>
+        <tr>
+            <td style="border-style: ridge;">400</td>
+            <td style="border-style: ridge;">500</td>
+            <td style="border-style: ridge;">600</td>
+        </tr>
+
+    
+
+    </table>
+
+</body>
+</html>
+
+4.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+<body>
+    <table><strong>This table has borders</strong>
+    
+        <tr>
+            <td style="border-style: ridge;">100 </td>
+            <td style="border-style: ridge;">200 </td>
+            <td style="border-style: ridge;">300 </td>
+        </tr>
+        <tr>
+            <td style="border-style: ridge;">400 </td>
+            <td style="border-style: ridge;">500 </td>
+            <td style="border-style: ridge;">600 </td>
+        </tr>
+    
+
+    </table>
+    <table><strong>Two rows and three columns</strong>
+        <colgroup>
+            <col span="3" style="border-style: ridge;">
+        
+        </colgroup>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>500</td>
+            <td>600</td>
+        </tr>
+
+    
+
+    </table>
+
+</body>
+</html>
+
+5.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+<body>
+    <strong>Numbered list:</strong>
+    <ol>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Lemons</li>
+        <li>Oranges</li>
+    </ol>
+    <strong>Letters list:</strong>
+    <ol type="A">
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Lemons</li>
+        <li>Oranges</li>
+    </ol>
+    <strong>Lowercase letters list:</strong>
+    <ol type="a">
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Lemons</li>
+        <li>Oranges</li>
+    </ol>
+    <strong>Roman numbers list:</strong>
+    <ol type="I">
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Lemons</li>
+        <li>Oranges</li>
+    </ol>
+    <strong>Lowercase Roman numbers list:</strong>
+    <ol type="i">
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Lemons</li>
+        <li>Oranges</li>
+    </ol>
+
+</body>
+</html>
+
+6.
+
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>HTML Forms</title>
+
+</head>
+<body>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" style="border-style: inset;"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="" id="password" style="border-style: inset;">
+
+    </form>
+
+
+</body>
+</html>
+
+7.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+
+<body>
+    <input type="radio" name="choice" id="option-1">I have a bike<br><br>
+    <label for="I have a bike"></label>
+    <input type="radio" name="choice" id="option-2">I have a car<br><br>
+    <label for="I have a car"></label>
+    <button type="submit" value="Submit" style="border-color: deepskyblue;">Submit</button>
+</body>
+</html>
+
+8.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+<frameset rows="20%,80%" style="border-style: inset;">
+
+    <frame src="top.html" name="top"></frame>
+    <frameset cols="50%,50%">
+        <frame src="left.html">
+        <frame src="right.html">
+    </frameset>
+
+</frameset>
+
+
+<body>
+</body>
+</html>
+
+9.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+<frameset rows="20%,80%" cols="50%,50%" style="border-style: inset;">
+
+    <frame src="topleft.html" name="top">
+    <frame src="topright.html" name="topright">
+    <frame src="botleft.html" name="botleft">
+    <frame src="botright.html" name="botright">
+
+</frameset>
+
+
+<body>
+</body>
+</html>

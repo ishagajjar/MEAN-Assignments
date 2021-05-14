@@ -1,0 +1,171 @@
+CSS ASSIGNMENT
+
+1.
+
+2.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+
+<body>
+    <div style="background-color:lightcyan;">
+        <h1>This is heading 1</h1>
+        <h2 style="text-decoration:line-through;">This is heading 2</h2>
+        <h3 style="text-decoration: underline;">This is heading 3</h3>
+        <h4>This is heading 4</h4>
+        
+    </div>
+    
+    
+</body>
+</html>
+
+3.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+
+<body>
+    <div style="background-color:lightcyan;">
+        <p>THIS IS SOME TEXT</p>
+        <p>This is some text</p>
+        <p>This is some text</p>
+    </div>
+    
+    
+</body>
+</html>
+
+4.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+
+<body style="background-color: lightcyan;">
+    <a href="https://www.google.co.in" style="color: red;">This is a link</style></a>
+    
+</body>
+</html>
+
+5.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table,td,th{
+            border:1.5px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th><strong>Firstname</strong></th>
+            <th><strong>Lastname</strong> </th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+6.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table,th,td{
+            border: 1.5px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr style="background-color:green;">
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Savings</th>
+
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$100</td>
+
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$150</td>
+
+        </tr>
+        <tr>
+            <td>Joe</td>
+            <td>Swanson</td>
+            <td>$300</td>
+
+        </tr>
+        <tr>
+            <td>Cleveland</td>
+            <td>Brown</td>
+            <td>$250</td>
+
+        </tr>
+    </table>
+        
+</body>
+</html>
+
+7.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p{border: 1px solid red;outline-style:dotted;outline-color: springgreen;}
+    </style>
+    
+</head>
+
+<body>
+    <p><strong>Note: </strong>IE8 supports the outline properties only if a !DOCTYPE is specified</p>
+ 
+</body>
+</html>
+
+8.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>assignment</title>
+</head>
+
+<body>
+    <p style="background-color: lightcyan; border-style: solid;border-width: 6px;">Some text.</p>
+    <p style="background-color: lightcyan; border-style: solid;border-width: 4px;">Some text.</p>
+    <p style="background-color: lightcyan; border-style: solid;">Some text.</p>
+    <p style="background-color: lightcyan; border-style: solid;border-width: 0px; color: transparent;">Some text<h1>
+</body>
+</html>
